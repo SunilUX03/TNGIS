@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-action: #0066cc;
+  --color-action-hover: #0071e3;
+  --color-ink: #1d1d1f;
+  --color-onDark: #ffffff;
+  --color-muted: #7a7a7a;
+  --color-secondary: #333333;
+  --color-canvas: #ffffff;
+  --color-parchment: #f5f5f7;
+  --color-pearl: #fafafc;
+  --color-tile-1: #272729;
+  --color-tile-2: #2a2a2c;
+  --color-tile-3: #252527;
+  --color-hairline: #e0e0e0;
+  --color-divider: #f0f0f0;
+
+  --color-success: #1a7f37;
+  --color-warning: #b95000;
+  --color-danger: #c41e3a;
+
+  /* Radii */
+  --radius-compact: 8px;
+  --radius-card: 18px;
+
+  /* Fonts */
+  --font-sans: system-ui, -apple-system, "SF Pro Text", "SF Pro Display", Inter, sans-serif;
+
+  /* Shadow: the one permitted floating-element shadow */
+  --shadow-float: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--color-ink);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .body-text {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.47;
+    letter-spacing: -0.374px;
+  }
+
+  .caption-text {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .fine-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-muted);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* MapLibre control overrides to keep visual language consistent */
+.maplibregl-ctrl-attrib {
+  font-size: 10px !important;
+}
+
+.maplibregl-ctrl-scale {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid var(--color-hairline) !important;
+  border-top: none !important;
+  color: var(--color-secondary) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+
+.maplibregl-ctrl-bottom-left {
+  transition: bottom 0.2s ease;
+}
